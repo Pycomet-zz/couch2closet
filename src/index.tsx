@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -24,7 +25,9 @@ ReactDOM.render(
           apiConnector: connector
         }}
       >
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </SearchProvider>
     </ChakraProvider>
   </React.StrictMode>,

@@ -8,7 +8,6 @@ const BodySection: React.FC = () => {
         <Stack
             direction="column"
             paddingTop={'2vh'}
-            // bg={'lightgrey'}
             height={'90vh'}
             alignItems='center'
             justifyContent='center'
@@ -30,7 +29,7 @@ const BodySection: React.FC = () => {
                                 </Button>
                             </Stack>
                         </form>
-                        )}
+                    )}
                 />
             </Box>
         </Stack>

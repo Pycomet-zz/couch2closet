@@ -1,17 +1,14 @@
 import React from 'react';
-import PageMeta from './components/MetaSection';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import PageHeader from './components/HeaderSection';
-import BodySection from './components/SearchSection';
+import LandingPage from './pages/LandingPage';
+// import SearchPage from './pages/SearchPage';
 
 function App() {
   return (
-    <>
-      <PageMeta />
-      <PageHeader />
-      <hr></hr>
-      <BodySection />
-    </>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+    </Routes>
   );
 }
 
