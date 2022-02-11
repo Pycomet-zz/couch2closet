@@ -1,4 +1,4 @@
-import { Flex, Heading, Box, Text, Image, Spacer, Button } from "@chakra-ui/react";
+import { Flex, useMediaQuery, Box, Text, Image, Spacer, Button } from "@chakra-ui/react";
 import Logo from "../../assets/logo.png";
 
 interface PageHeaderProps {
@@ -6,6 +6,7 @@ interface PageHeaderProps {
 }
 
 const PageHeader: React.FC<PageHeaderProps> = () => {
+    const [DesktopScreen] = useMediaQuery("(min-width: 1200px)")
 
     return (
         <>
@@ -17,10 +18,16 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
                 paddingX='5vw'
                 paddingY='3vh'
                 boxShadow='lg'
-                paddingLeft='40vw'
+                paddingLeft={DesktopScreen ? '40vw' : '0vw'}
             >
                 <Box display="flex">
-                    <Image src={Logo} alt="logo"></Image>
+                    <Image
+                        src={Logo}
+                        alt="logo"
+                        width={DesktopScreen ? 'auto' : '15vh'}
+                        height={DesktopScreen ? 'auto' : '8vh'}
+                        marginTop={DesktopScreen ? '0' : '2vh'}
+                    ></Image>
                 </Box>
                 <Spacer />
                 <Box marginY='3vh' marginX='2vw'>
@@ -38,7 +45,7 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
                         paddingY="3vh"
                         boxShadow='lg'
                     >
-                        <Text color="brand">Get a Quote</Text>
+                        <Text color="brand" fontSize={'sm'}>Get a Quote</Text>
                     </Button>
                 </Box>
             </Flex>
